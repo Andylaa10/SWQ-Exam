@@ -1,4 +1,4 @@
-package models;
+package postoffice.models;
 
 public class Label {
     private int id;
