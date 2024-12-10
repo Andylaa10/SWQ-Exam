@@ -1,5 +1,8 @@
 import { DeliveryType } from '../models/DeliveryType';
 import { Package } from '../models/Package';
+import {Label} from "../models/Label";
+import { v4 as uuidv4 } from 'uuid';
+
 
 class LabelService {
   private static maxDimensions = { height: 50, width: 50, length: 50 };
@@ -48,7 +51,28 @@ class LabelService {
   }
 
   public static generateTrackingNumber(): string {
-    return 'TRK' + Math.floor(Math.random() * 1000000000).toString();
+    return uuidv4();
+  }
+
+
+  public static createLabel(pkg: Package): Label {
+    const validationError = this.validatePackage(pkg);
+    if (validationError) {
+      throw new Error(validationError);
+    }
+
+    const shippingCost = this.calculateShippingCost(pkg);
+    const trackingNumber = this.generateTrackingNumber();
+
+    const label = new Label();
+    label.id = trackingNumber;
+    label.package = pkg;
+
+    console.log(`Label created successfully!`);
+    console.log(`Cost: ${shippingCost}`);
+    console.log(`Tracking ID: ${trackingNumber}`);
+
+    return label;
   }
 }
 
