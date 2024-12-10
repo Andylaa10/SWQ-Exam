@@ -54,13 +54,7 @@ public class LabelService {
     }
 
     // Method to create a label
-    public Label createLabel(Package pkg, DeliveryType deliveryType, String senderAddress, String receiverAddress) {
-        // Validate required fields
-        if (pkg == null || deliveryType == null || senderAddress == null || receiverAddress == null ||
-            senderAddress.isEmpty() || receiverAddress.isEmpty()) {
-            throw new IllegalArgumentException("All required fields must be completed.");
-        }
-
+    public Label createLabel(Package pkg, DeliveryType deliveryType) {
         // Validate the package
         if (!validatePackage(pkg)) {
             throw new IllegalArgumentException("Invalid package dimensions or weight.");
