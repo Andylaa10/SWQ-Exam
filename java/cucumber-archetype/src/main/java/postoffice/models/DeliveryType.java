@@ -1,4 +1,4 @@
-package models;
+package postoffice.models;
 
 public enum DeliveryType {
     STANDARD,

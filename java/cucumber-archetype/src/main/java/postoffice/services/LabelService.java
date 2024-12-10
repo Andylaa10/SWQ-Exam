@@ -1,8 +1,8 @@
-package services;
+package postoffice.services;
 
-import models.DeliveryType;
-import models.Label;
-import models.Package;
+import postoffice.models.DeliveryType;
+import postoffice.models.Label;
+import postoffice.models.Package;
 
 import java.util.UUID;
 
