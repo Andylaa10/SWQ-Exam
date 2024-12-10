@@ -26,8 +26,8 @@ func ValidatePackage(pkg models.Package) (bool, error) {
 	return true, nil
 }
 
-func CalculateShippingCost(pkg models.Package) int32 {
-	baseCost := int32(0)
+func CalculateShippingCost(pkg models.Package) float32 {
+	baseCost := float32(0)
 
 	switch pkg.DeliveryType {
 	case "Standard":

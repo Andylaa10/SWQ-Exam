@@ -25,11 +25,11 @@ public class LabelService {
     }
 
     // Method to calculate shipping cost
-    private double calculateShippingCost(Package pkg, DeliveryType deliveryType) {
+    private double calculateShippingCost(Package pkg) {
         double baseCost;
 
         // Determine base cost based on delivery type
-        switch (deliveryType) {
+        switch (pkg.deliveryType) {
             case STANDARD:
                 baseCost = 60.0;
                 break;
@@ -54,30 +54,23 @@ public class LabelService {
     }
 
     // Method to create a label
-    public Label createLabel(Package pkg, DeliveryType deliveryType) {
+    public Label createLabel(Package pkg) {
         // Validate the package
         if (!validatePackage(pkg)) {
             throw new IllegalArgumentException("Invalid package dimensions or weight.");
         }
 
         // Calculate the shipping cost
-        double shippingCost = calculateShippingCost(pkg, deliveryType);
-
-        // Generate a unique tracking number
-        String trackingNumber = generateTrackingNumber();
+        double shippingCost = calculateShippingCost(pkg);
 
         // Create the label
-        Label label = new Label(0, pkg); // ID will be handled by persistence later
-        label.setId(trackingNumber.hashCode()); // Temporary unique ID
+        Label label = new Label(0, pkg);
+        label.setId(UUID.randomUUID());
+        label.setTotalCost(shippingCost)
         System.out.println("Label created successfully!");
         System.out.println("Cost: " + shippingCost);
         System.out.println("Tracking ID: " + trackingNumber);
 
         return label;
-    }
-
-    // Method to generate a unique tracking number
-    private String generateTrackingNumber() {
-        return UUID.randomUUID().toString();
     }
 }

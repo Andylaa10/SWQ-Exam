@@ -1,14 +1,14 @@
 import {DeliveryType} from "./DeliveryType";
 
 export class Package {
-  private id: number;
+  private id: string;
   private height: number;
   private width: number;
   private length: number;
   private weight: number;
   private deliveryType: DeliveryType;
 
-  constructor(id: number, height: number, width: number, length: number, weight: number, deliveryType: DeliveryType) {
+  constructor(id: string, height: number, width: number, length: number, weight: number, deliveryType: DeliveryType) {
     this.id = id;
     this.height = height;
     this.width = width;
@@ -18,7 +18,7 @@ export class Package {
   }
 
   // Getters
-  public getId(): number {
+  public getId(): string {
     return this.id;
   }
 
@@ -43,7 +43,7 @@ export class Package {
   }
 
   // Setters
-  public setId(id: number): void {
+  public setId(id: string): void {
     this.id = id;
   }
 

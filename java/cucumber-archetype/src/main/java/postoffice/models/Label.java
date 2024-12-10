@@ -1,17 +1,19 @@
 package postoffice.models;
 
 public class Label {
-    private int id;
+    private UUID id;
     private Package pkg;
+    private double totalCost;
 
     // Constructor
-    public Label(int id, Package pkg) {
+    public Label(UUID id, Package pkg, double totalCost) {
         this.id = id;
         this.pkg = pkg;
+        this.totalCost = totalCost
     }
 
     // Getters
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -19,8 +21,12 @@ public class Label {
         return pkg;
     }
 
+    public double getTotalCost(){
+        return totalCost;
+    }
+
     // Setters
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -28,10 +34,15 @@ public class Label {
         this.pkg = pkg;
     }
 
+    public void setTotalCost(double totalCost){
+        this.totalCost = totalCost;
+    }
+
     @Override
     public String toString() {
         return "Label{" +
                 "id=" + id +
+                "totalCost=" + totalCost +
                 ", packageId=" + (pkg != null ? pkg.getId() : "null") +
                 '}';
     }

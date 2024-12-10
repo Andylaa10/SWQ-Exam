@@ -1,7 +1,7 @@
 package postoffice.models;
 
 public class Package {
-    private int id;
+    private UUID id;
     private int height;
     private int width;
     private int length;
@@ -10,7 +10,7 @@ public class Package {
 
 
     // Constructor
-    public Package(int id, int height, int width, int length, double weight, DeliveryType deliveryType) {
+    public Package(UUID id, int height, int width, int length, double weight, DeliveryType deliveryType) {
         this.id = id;
         this.height = height;
         this.width = width;
@@ -20,7 +20,7 @@ public class Package {
     }
 
     // Getters
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -41,7 +41,7 @@ public class Package {
     }
 
     // Setters
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

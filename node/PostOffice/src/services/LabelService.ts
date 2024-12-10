@@ -1,7 +1,7 @@
 import { DeliveryType } from '../models/DeliveryType';
 import { Package } from '../models/Package';
 import {Label} from "../models/Label";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuid4 } from 'uuid';
 
 
 class LabelService {
@@ -10,21 +10,25 @@ class LabelService {
   private static minWeight = 0.1;
   private static maxWeight = 30;
 
-  public static validatePackage(pkg: Package): string | null {
+  public static validatePackage(pkg: Package): boolean {
     if (pkg.getHeight() > this.maxDimensions.height ||
         pkg.getWidth() > this.maxDimensions.width ||
         pkg.getLength() > this.maxDimensions.length) {
-      return 'Package exceeds maximum allowable size.';
+          console.error('Package exceeds maximum allowable size.');
+          return false;
     }
+
     if (pkg.getHeight() < this.minDimensions.height ||
         pkg.getWidth() < this.minDimensions.width ||
         pkg.getLength() < this.minDimensions.length) {
-      return 'Package is below minimum allowable size.';
+          console.error('Package is below minimum allowable size.');
+          return false; 
     }
     if (pkg.getWeight() < this.minWeight || pkg.getWeight() > this.maxWeight) {
-      return 'Package weight is out of allowable range.';
+      console.error('Package weight is out of allowable range.');
+      return false;
     }
-    return null;
+    return true;
   }
 
   public static calculateShippingCost(pkg: Package): number {
@@ -50,27 +54,18 @@ class LabelService {
     return baseCost;
   }
 
-  public static generateTrackingNumber(): string {
-    return uuidv4();
-  }
-
-
   public static createLabel(pkg: Package): Label {
     const validationError = this.validatePackage(pkg);
-    if (validationError) {
-      throw new Error(validationError);
+    if (!validationError) {
+      throw new Error();
     }
 
     const shippingCost = this.calculateShippingCost(pkg);
-    const trackingNumber = this.generateTrackingNumber();
 
-    const label = new Label();
-    label.id = trackingNumber;
-    label.package = pkg;
+    const label = new Label(uuid4(), pkg, shippingCost)
 
     console.log(`Label created successfully!`);
     console.log(`Cost: ${shippingCost}`);
-    console.log(`Tracking ID: ${trackingNumber}`);
 
     return label;
   }
