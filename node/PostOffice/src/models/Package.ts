@@ -1,6 +1,6 @@
-import {DeliveryType} from "./Delivery";
+import {DeliveryType} from "./DeliveryType";
 
-class Package {
+export class Package {
   private id: number;
   private height: number;
   private width: number;
