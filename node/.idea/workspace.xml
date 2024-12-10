@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ce4b529-b016-414a-b9e5-6d2cee63a960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PostOffice/src/models/Delivery.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PostOffice/src/models/Package.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PostOffice/src/models/Label.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PostOffice/src/services/LabelService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PostOffice/src/models/Delivery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/src/models/DeliveryType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PostOffice/src/models/Package.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/src/models/Package.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
