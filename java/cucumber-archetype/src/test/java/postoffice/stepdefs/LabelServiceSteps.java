@@ -46,6 +46,8 @@ public class LabelServiceSteps {
     @Then("the shipping cost should be calculated correctly")
     public void thenTheShippingCostShouldBeCalculated() {
         double expectedCost = labelService.calculateShippingCost(pkg);
+
+        // 0.01 is the delta and specifies the allowable margin of error for comparing two floating-point values.
         assertEquals("Shipping cost should match", expectedCost, label.getTotalCost(), 0.01);
     }
 
