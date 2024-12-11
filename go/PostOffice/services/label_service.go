@@ -47,13 +47,13 @@ func CalculateShippingCost(pkg models.Package) float32 {
 	return baseCost
 }
 
-func CreateLabel(pkg models.Package) models.Label {
+func CreateLabel(pkg models.Package) (models.Label, error) {
 
 	isValid, err := ValidatePackage(pkg)
 
 	if !isValid {
 		fmt.Printf("Error validating package: %v", err)
-		return models.Label{}
+		return models.Label{}, errors.New("package is not valid")
 	}
 
 	costShipping := CalculateShippingCost(pkg)
@@ -62,5 +62,5 @@ func CreateLabel(pkg models.Package) models.Label {
 		ID:        uuid.NewString(),
 		Package:   pkg,
 		TotalCost: costShipping,
-	}
+	}, nil
 }

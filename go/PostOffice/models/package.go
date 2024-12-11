@@ -2,9 +2,9 @@ package models
 
 type Package struct {
 	ID           string
-	Height       int64
-	Width        int64
-	Length       int64
+	Height       int32
+	Width        int32
+	Length       int32
 	Weight       float32
 	DeliveryType string
 }
