@@ -1,5 +1,5 @@
 export enum DeliveryType {
-  STANDARD,
-  EXPRESS,
-  ECONOMY
+  STANDARD = "STANDARD",
+  EXPRESS = "EXPRESS",
+  ECONOMY = "ECONOMY"
 }

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ce4b529-b016-414a-b9e5-6d2cee63a960" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PostOffice/src/features/package_label.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PostOffice/src/features/support/steps.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PostOffice/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PostOffice/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostOffice/src/services/LabelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PostOffice/src/services/LabelService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733820051282</updated>
-      <workItem from="1733820052358" duration="687000" />
+      <workItem from="1733820052358" duration="700000" />
     </task>
     <servers />
   </component>

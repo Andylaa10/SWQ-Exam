@@ -14,19 +14,16 @@ class LabelService {
     if (pkg.getHeight() > this.maxDimensions.height ||
         pkg.getWidth() > this.maxDimensions.width ||
         pkg.getLength() > this.maxDimensions.length) {
-          console.error('Package exceeds maximum allowable size.');
-          return false;
+          throw new Error('Package exceeds maximum allowable size.');
     }
 
     if (pkg.getHeight() < this.minDimensions.height ||
         pkg.getWidth() < this.minDimensions.width ||
         pkg.getLength() < this.minDimensions.length) {
-          console.error('Package is below minimum allowable size.');
-          return false; 
+          throw new Error('Package is below minimum allowable size.');
     }
     if (pkg.getWeight() < this.minWeight || pkg.getWeight() > this.maxWeight) {
-      console.error('Package weight is out of allowable range.');
-      return false;
+      throw new Error('Package weight is out of allowable range.');
     }
     return true;
   }

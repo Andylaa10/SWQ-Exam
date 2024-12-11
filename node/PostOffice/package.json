@@ -3,14 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "v": "node -v",
+    "test": "cucumber-js src/features/package_label.feature --require src/features"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@cucumber/cucumber": "^11.1.0",
+    "commander": "^12.1.0",
+    "node": "22.12.0",
     "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.1.0",
+    "@types/assert": "^1.5.11",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
   }
 }
