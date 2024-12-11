@@ -23,6 +23,7 @@
 
 # Maven target directory
 /target/
+**/target/
 
 # Maven build files
 !.mvn/wrapper/maven-wrapper.jar
