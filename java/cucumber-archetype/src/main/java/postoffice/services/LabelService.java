@@ -8,7 +8,7 @@ import java.util.UUID;
 public class LabelService {
 
     // Method to validate package dimensions and weight
-    private boolean validatePackage(Package pkg) {
+    public boolean validatePackage(Package pkg) {
         if (pkg.getHeight() < 10 || pkg.getWidth() < 10 || pkg.getLength() < 5 ||
             pkg.getHeight() > 50 || pkg.getWidth() > 50 || pkg.getLength() > 50) {
             System.out.println("Error: Package dimensions are not within the allowed range.");
@@ -24,7 +24,7 @@ public class LabelService {
     }
 
     // Method to calculate shipping cost
-    private double calculateShippingCost(Package pkg) {
+    public double calculateShippingCost(Package pkg) {
         double baseCost;
 
         // Determine base cost based on delivery type
