@@ -67,7 +67,6 @@ public class LabelService {
 
         // Create the label
         Label label = new Label(id, pkg, shippingCost);
-        label.setId(UUID.randomUUID());
         label.setTotalCost(shippingCost);
         System.out.println("Label created successfully!");
         System.out.println("Cost: " + shippingCost);
