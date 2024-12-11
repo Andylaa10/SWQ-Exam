@@ -1,4 +1,4 @@
-Feature: Package validation and label creation
+Feature: Package validation, label creation and shipping cost calculation
 
   Scenario: Create a valid package label with medium weight
     Given a package with dimensions 30 height, 30 width, 30 length, and weight 10.0 kg, and delivery type "STANDARD"
