@@ -1,5 +1,7 @@
 package postoffice.models;
 
+import java.util.UUID;
+
 public class Package {
     private UUID id;
     private int height;
@@ -8,6 +10,10 @@ public class Package {
     private double weight;
     private DeliveryType deliveryType;
 
+    
+    public Package() {
+
+    }
 
     // Constructor
     public Package(UUID id, int height, int width, int length, double weight, DeliveryType deliveryType) {
@@ -18,7 +24,7 @@ public class Package {
         this.weight = weight;
         this.deliveryType = deliveryType;
     }
-
+    
     // Getters
     public UUID getId() {
         return id;

@@ -1,6 +1,5 @@
 package postoffice.services;
 
-import postoffice.models.DeliveryType;
 import postoffice.models.Label;
 import postoffice.models.Package;
 
@@ -29,7 +28,7 @@ public class LabelService {
         double baseCost;
 
         // Determine base cost based on delivery type
-        switch (pkg.deliveryType) {
+        switch (pkg.getDeliveryType()) {
             case STANDARD:
                 baseCost = 60.0;
                 break;
@@ -63,13 +62,15 @@ public class LabelService {
         // Calculate the shipping cost
         double shippingCost = calculateShippingCost(pkg);
 
+        // Generate random UUID
+        UUID id = UUID.randomUUID();
+
         // Create the label
-        Label label = new Label(0, pkg);
+        Label label = new Label(id, pkg, shippingCost);
         label.setId(UUID.randomUUID());
-        label.setTotalCost(shippingCost)
+        label.setTotalCost(shippingCost);
         System.out.println("Label created successfully!");
         System.out.println("Cost: " + shippingCost);
-        System.out.println("Tracking ID: " + trackingNumber);
 
         return label;
     }

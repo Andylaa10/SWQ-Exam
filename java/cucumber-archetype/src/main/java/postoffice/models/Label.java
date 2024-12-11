@@ -1,5 +1,7 @@
 package postoffice.models;
 
+import java.util.UUID;
+
 public class Label {
     private UUID id;
     private Package pkg;
@@ -9,7 +11,7 @@ public class Label {
     public Label(UUID id, Package pkg, double totalCost) {
         this.id = id;
         this.pkg = pkg;
-        this.totalCost = totalCost
+        this.totalCost = totalCost;
     }
 
     // Getters
