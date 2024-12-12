@@ -10,7 +10,6 @@ public class Package {
     private double weight;
     private DeliveryType deliveryType;
 
-    
     public Package() {
 
     }
@@ -24,7 +23,7 @@ public class Package {
         this.weight = weight;
         this.deliveryType = deliveryType;
     }
-    
+
     // Getters
     public UUID getId() {
         return id;
@@ -70,8 +69,8 @@ public class Package {
     // Getters and Setters for DeliveryType
     public DeliveryType getDeliveryType() {
         return deliveryType;
-     }
-    
+    }
+
     public void setDeliveryType(DeliveryType deliveryType) {
         this.deliveryType = deliveryType;
     }

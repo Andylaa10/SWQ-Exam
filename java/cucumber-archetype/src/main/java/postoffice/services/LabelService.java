@@ -9,15 +9,16 @@ public class LabelService {
 
     // Method to validate package dimensions and weight
     public boolean validatePackage(Package pkg) {
-        if (pkg.getHeight() < 10 || pkg.getWidth() < 10 || pkg.getLength() < 5 ||
-            pkg.getHeight() > 50 || pkg.getWidth() > 50 || pkg.getLength() > 50) {
-            System.out.println("Error: Package dimensions are not within the allowed range.");
-            return false;
+        if (pkg.getHeight() < 10 || pkg.getWidth() < 10 || pkg.getLength() < 5) {
+            throw new IllegalArgumentException("Package is below minimum allowable size");
         }
 
-        if (pkg.getWeight() < 0.1 || pkg.getWeight() > 30) {
-            System.out.println("Error: Package weight is not within the allowed range.");
-            return false;
+        if (pkg.getHeight() > 50 || pkg.getWidth() > 50 || pkg.getLength() > 50) {
+            throw new IllegalArgumentException("Package is above maximum allowable size");
+        }
+
+        if (pkg.getWeight() < 0.01 || pkg.getWeight() > 30) {
+            throw new IllegalArgumentException("Package is out of allowable weight range");
         }
 
         return true;
@@ -25,7 +26,7 @@ public class LabelService {
 
     // Method to calculate shipping cost
     public double calculateShippingCost(Package pkg) {
-        double baseCost;
+        double baseCost = 0;
 
         // Determine base cost based on delivery type
         switch (pkg.getDeliveryType()) {
@@ -54,9 +55,11 @@ public class LabelService {
 
     // Method to create a label
     public Label createLabel(Package pkg) {
-        // Validate the package
-        if (!validatePackage(pkg)) {
-            throw new IllegalArgumentException("Invalid package dimensions or weight.");
+        try {
+            validatePackage(pkg); // Ensure validation is done before proceeding
+        } catch (IllegalArgumentException e) {
+            // Rethrow with the specific message so it's easier for the test to match
+            throw new IllegalArgumentException(e.getMessage());
         }
 
         // Calculate the shipping cost
@@ -68,8 +71,6 @@ public class LabelService {
         // Create the label
         Label label = new Label(id, pkg, shippingCost);
         label.setTotalCost(shippingCost);
-        System.out.println("Label created successfully!");
-        System.out.println("Cost: " + shippingCost);
 
         return label;
     }

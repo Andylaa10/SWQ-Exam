@@ -23,7 +23,7 @@ public class Label {
         return pkg;
     }
 
-    public double getTotalCost(){
+    public double getTotalCost() {
         return totalCost;
     }
 
@@ -36,7 +36,7 @@ public class Label {
         this.pkg = pkg;
     }
 
-    public void setTotalCost(double totalCost){
+    public void setTotalCost(double totalCost) {
         this.totalCost = totalCost;
     }
 
