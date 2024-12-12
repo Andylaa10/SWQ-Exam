@@ -16,7 +16,7 @@ public class CreateLabelInvalidWeightSteps {
     private String errorMessage;
 
     @Given("a package with invalid weight {int} height, {int} width, {int} length, and weight {double} kg, and delivery type {string}")
-    public void createLabelInvalidWeightDimensions(int height, int width, int length, double weight,
+    public void createLabelInvalidWeight(int height, int width, int length, double weight,
             String deliveryType) {
         pkg = new Package(); // Initialize a new Package object
 
@@ -37,7 +37,7 @@ public class CreateLabelInvalidWeightSteps {
     }
 
     @Then("an exception should be thrown due to {string}")
-    public void thenAnExceptionShouldBeThrownDueToInvalidDimensions(String expectedMessage) {
+    public void thenAnExceptionShouldBeThrownDueToInvalidWeight(String expectedMessage) {
         assertEquals(expectedMessage, errorMessage);
     }
 }

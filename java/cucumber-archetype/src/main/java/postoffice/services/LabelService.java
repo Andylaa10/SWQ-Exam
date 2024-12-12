@@ -44,7 +44,7 @@ public class LabelService {
         }
 
         // Add weight-based fees
-        if (pkg.getWeight() > 5.0 && pkg.getWeight() <= 15.0) {
+        if (pkg.getWeight() > 0.0 && pkg.getWeight() <= 15.0) {
             baseCost += 15.0; // Medium weight fee
         } else if (pkg.getWeight() > 15.0 && pkg.getWeight() <= 30.0) {
             baseCost += 30.0; // Heavy weight fee

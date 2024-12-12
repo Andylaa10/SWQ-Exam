@@ -11,16 +11,17 @@ import (
 func ValidatePackage(pkg models.Package) (bool, error) {
 	// Check for minimum size
 	if pkg.Height < 10 || pkg.Width < 10 || pkg.Length < 5 {
-		return false, errors.New("package exceeds maximum allowable size")
+		return false, errors.New("package is below minimum allowable size")
 	}
 
 	// Check for maximum size
 	if pkg.Height > 50 || pkg.Width > 50 || pkg.Length > 50 {
-		return false, errors.New("package is below minimum allowable size")
+		return false, errors.New("package is above maximum allowable size")
+
 	}
 
-	if pkg.Weight < 0.1 || pkg.Weight > 30 {
-		return false, errors.New("package is out of allowable range")
+	if pkg.Weight < 0.01 || pkg.Weight > 30 {
+		return false, errors.New("package is out of allowable weight range")
 	}
 
 	return true, nil
@@ -29,19 +30,22 @@ func ValidatePackage(pkg models.Package) (bool, error) {
 func CalculateShippingCost(pkg models.Package) float32 {
 	baseCost := float32(0)
 
+	// Normalize delivery type to handle case-insensitivity
 	switch pkg.DeliveryType {
-	case "Standard":
+	case "STANDARD":
 		baseCost = 60
-	case "Express":
+	case "EXPRESS":
 		baseCost = 120
-	case "Economy":
+	case "ECONOMY":
 		baseCost = 30
+	default:
+		return 0
 	}
 
-	if pkg.Weight > 15 {
-		baseCost += 30
-	} else if pkg.Weight > 5 {
+	if pkg.Weight > 0 && pkg.Weight <= 15 {
 		baseCost += 15
+	} else if pkg.Weight > 15 && pkg.Weight <= 30 {
+		baseCost += 30
 	}
 
 	return baseCost
@@ -53,7 +57,7 @@ func CreateLabel(pkg models.Package) (models.Label, error) {
 
 	if !isValid {
 		fmt.Printf("Error validating package: %v", err)
-		return models.Label{}, errors.New("package is not valid")
+		return models.Label{}, err
 	}
 
 	costShipping := CalculateShippingCost(pkg)

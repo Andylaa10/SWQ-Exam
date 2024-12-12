@@ -10,9 +10,9 @@ type Package struct {
 }
 
 const (
-	DeliveryStandard = "Standard"
-	DeliveryExpress  = "Express"
-	DeliveryEconomy  = "Economy"
+	DeliveryStandard = "STANDARD"
+	DeliveryExpress  = "EXPRESS"
+	DeliveryEconomy  = "ECONOMY"
 )
 
 func NewPackage() *Package {
