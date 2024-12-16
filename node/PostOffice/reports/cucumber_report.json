@@ -4,61 +4,48 @@
     "elements": [
       {
         "description": "",
-        "id": "package-validation,-label-creation-and-shipping-cost-calculation;create-a-valid-package-label-with-medium-weight",
-        "keyword": "Scenario",
-        "line": 3,
-        "name": "Create a valid package label with medium weight",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 11,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 4,
-            "name": "a package with dimensions 30 height, 30 width, 30 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 4.0 kg, and delivery type \"STANDARD\"",
             "match": {
-              "location": "src/features/support/steps.ts:12"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 407916
+              "duration": 504208
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 5,
-            "name": "the label is created for the package",
+            "name": "the shipping cost is calculated for the package",
             "match": {
-              "location": "src/features/support/steps.ts:20"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
             },
             "result": {
               "status": "passed",
-              "duration": 229165
+              "duration": 73375
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "the label should be created successfully",
+            "name": "the shipping cost should be 60.0",
             "match": {
-              "location": "src/features/support/steps.ts:30"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
             },
             "result": {
               "status": "passed",
-              "duration": 25875
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "the shipping cost should be calculated correctly",
-            "match": {
-              "location": "src/features/support/steps.ts:34"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 51916
+              "duration": 68292
             }
           }
         ],
@@ -67,61 +54,48 @@
       },
       {
         "description": "",
-        "id": "package-validation,-label-creation-and-shipping-cost-calculation;create-a-valid-package-label-with-heavy-weight",
-        "keyword": "Scenario",
-        "line": 9,
-        "name": "Create a valid package label with heavy weight",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 10,
-            "name": "a package with dimensions 40 height, 40 width, 40 length, and weight 20.0 kg, and delivery type \"EXPRESS\"",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 4.0 kg, and delivery type \"EXPRESS\"",
             "match": {
-              "location": "src/features/support/steps.ts:12"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 37459
+              "duration": 46417
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 11,
-            "name": "the label is created for the package",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
             "match": {
-              "location": "src/features/support/steps.ts:20"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
             },
             "result": {
               "status": "passed",
-              "duration": 26625
+              "duration": 22583
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 12,
-            "name": "the label should be created successfully",
+            "line": 6,
+            "name": "the shipping cost should be 120.0",
             "match": {
-              "location": "src/features/support/steps.ts:30"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
             },
             "result": {
               "status": "passed",
-              "duration": 16250
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 13,
-            "name": "the shipping cost should be calculated correctly",
-            "match": {
-              "location": "src/features/support/steps.ts:34"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19000
+              "duration": 24709
             }
           }
         ],
@@ -130,48 +104,148 @@
       },
       {
         "description": "",
-        "id": "package-validation,-label-creation-and-shipping-cost-calculation;package-with-invalid-dimensions-(too-small)",
-        "keyword": "Scenario",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 4.0 kg, and delivery type \"ECONOMY\"",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29874
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15084
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the shipping cost should be 30.0",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 79833
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 82791
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55916
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the shipping cost should be 75.0",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20624
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
         "line": 15,
-        "name": "Package with invalid dimensions (too small)",
+        "name": "Calculate shipping cost for a valid package with different delivery types",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
-            "name": "a package with dimensions 5 height, 5 width, 5 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 10.0 kg, and delivery type \"EXPRESS\"",
             "match": {
-              "location": "src/features/support/steps.ts:12"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 138374
+              "duration": 36042
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
-            "name": "the label is created for the package",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
             "match": {
-              "location": "src/features/support/steps.ts:20"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
             },
             "result": {
               "status": "passed",
-              "duration": 81000
+              "duration": 12375
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 18,
-            "name": "an exception should be thrown due to invalid package dimensions",
+            "line": 6,
+            "name": "the shipping cost should be 135.0",
             "match": {
-              "location": "src/features/support/steps.ts:45"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
             },
             "result": {
               "status": "passed",
-              "duration": 424541
+              "duration": 53625
             }
           }
         ],
@@ -180,48 +254,198 @@
       },
       {
         "description": "",
-        "id": "package-validation,-label-creation-and-shipping-cost-calculation;package-with-invalid-weight-(too-large)",
-        "keyword": "Scenario",
-        "line": 20,
-        "name": "Package with invalid weight (too large)",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 16,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 21,
-            "name": "a package with dimensions 20 height, 20 width, 20 length, and weight 35.0 kg, and delivery type \"ECONOMY\"",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 10.0 kg, and delivery type \"ECONOMY\"",
             "match": {
-              "location": "src/features/support/steps.ts:12"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 41084
+              "duration": 35750
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 22,
-            "name": "the label is created for the package",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
             "match": {
-              "location": "src/features/support/steps.ts:20"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
             },
             "result": {
               "status": "passed",
-              "duration": 27042
+              "duration": 64250
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 23,
-            "name": "an exception should be thrown due to invalid package weight",
+            "line": 6,
+            "name": "the shipping cost should be 45.0",
             "match": {
-              "location": "src/features/support/steps.ts:39"
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
             },
             "result": {
               "status": "passed",
-              "duration": 61291
+              "duration": 27749
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 20.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the shipping cost should be 90.0",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13290
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 18,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 20.0 kg, and delivery type \"EXPRESS\"",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9165
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the shipping cost should be 150.0",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16665
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "shipping-cost-calculation-based-on-delivery-type;calculate-shipping-cost-for-a-valid-package-with-different-delivery-types",
+        "keyword": "Scenario Outline",
+        "line": 19,
+        "name": "Calculate shipping cost for a valid package with different delivery types",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with dimensions for shipping 30 height, 30 width, 30 length, and weight 20.0 kg, and delivery type \"ECONOMY\"",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18666
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the shipping cost is calculated for the package",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the shipping cost should be 60.0",
+            "match": {
+              "location": "src/features/support/CalculateShippingCostSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13250
             }
           }
         ],
@@ -229,11 +453,655 @@
         "type": "scenario"
       }
     ],
-    "id": "package-validation,-label-creation-and-shipping-cost-calculation",
+    "id": "shipping-cost-calculation-based-on-delivery-type",
     "line": 1,
     "keyword": "Feature",
-    "name": "Package validation, label creation and shipping cost calculation",
+    "name": "Shipping cost calculation based on delivery type",
     "tags": [],
-    "uri": "src/features/package_label.feature"
+    "uri": "src/features/CalculateShippingCost.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "handling-invalid-package-dimensions;package-label-creation-fails-due-to-invalid-dimensions",
+        "keyword": "Scenario Outline",
+        "line": 10,
+        "name": "Package label creation fails due to invalid dimensions",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with invalid dimensions 5 height, 5 width, 5 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CreateLabelInvalidDimensionsSteps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49125
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the label is created for the invalid dimensions package",
+            "match": {
+              "location": "src/features/support/CreateLabelInvalidDimensionsSteps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76167
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "an exception should be thrown with \"Package is below minimum allowable size\"",
+            "match": {
+              "location": "src/features/support/CreateLabelInvalidDimensionsSteps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24709
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "handling-invalid-package-dimensions;package-label-creation-fails-due-to-invalid-dimensions",
+        "keyword": "Scenario Outline",
+        "line": 11,
+        "name": "Package label creation fails due to invalid dimensions",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with invalid dimensions 51 height, 51 width, 51 length, and weight 10.0 kg, and delivery type \"ECONOMY\"",
+            "match": {
+              "location": "src/features/support/CreateLabelInvalidDimensionsSteps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14749
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the label is created for the invalid dimensions package",
+            "match": {
+              "location": "src/features/support/CreateLabelInvalidDimensionsSteps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11624
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "an exception should be thrown with \"Package is above maximum allowable size\"",
+            "match": {
+              "location": "src/features/support/CreateLabelInvalidDimensionsSteps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9541
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "handling-invalid-package-dimensions",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Handling invalid package dimensions",
+    "tags": [],
+    "uri": "src/features/CreateLabelInvalidDimensions.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "handling-invalid-package-weight;package-label-creation-fails-due-to-invalid-weight",
+        "keyword": "Scenario Outline",
+        "line": 9,
+        "name": "Package label creation fails due to invalid weight",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "a package with invalid weight 30 height, 30 width, 30 length, and weight 0.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelInvalidWeightSteps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 39250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the label is created for the invalid weight package",
+            "match": {
+              "location": "src/features/support/CalculateLabelInvalidWeightSteps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "an exception should be thrown due to \"Package is out of allowable weight range\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelInvalidWeightSteps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15667
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "handling-invalid-package-weight;package-label-creation-fails-due-to-invalid-weight",
+        "keyword": "Scenario Outline",
+        "line": 10,
+        "name": "Package label creation fails due to invalid weight",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "a package with invalid weight 30 height, 30 width, 30 length, and weight 30.1 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelInvalidWeightSteps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the label is created for the invalid weight package",
+            "match": {
+              "location": "src/features/support/CalculateLabelInvalidWeightSteps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10708
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "an exception should be thrown due to \"Package is out of allowable weight range\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelInvalidWeightSteps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9125
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "handling-invalid-package-weight",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Handling invalid package weight",
+    "tags": [],
+    "uri": "src/features/CreateLabelInvalidWeight.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "creating-valid-package-dimensions;package-label-creation",
+        "keyword": "Scenario Outline",
+        "line": 10,
+        "name": "Package label creation",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with valid dimensions 10 height, 10 width, 5 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40083
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the label is created for the valid dimensions package",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76416
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the label for valid dimensions should be created successfully",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27040
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "creating-valid-package-dimensions;package-label-creation",
+        "keyword": "Scenario Outline",
+        "line": 11,
+        "name": "Package label creation",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with valid dimensions 25 height, 25 width, 25 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the label is created for the valid dimensions package",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the label for valid dimensions should be created successfully",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "creating-valid-package-dimensions;package-label-creation",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Package label creation",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a package with valid dimensions 50 height, 50 width, 50 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14125
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the label is created for the valid dimensions package",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the label for valid dimensions should be created successfully",
+            "match": {
+              "location": "src/features/support/CreateLabelValidDimensionsSteps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5332
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "creating-valid-package-dimensions",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Creating valid package dimensions",
+    "tags": [],
+    "uri": "src/features/CreateLabelValidDimensions.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "creating-valid-package-weights;create-a-valid-package-label-with-varying-weights",
+        "keyword": "Scenario Outline",
+        "line": 10,
+        "name": "Create a valid package label with varying weights",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "a package with valid weight 30 height, 30 width, 30 length, and weight 0.01 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33166
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the label is created for the valid weight package",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the label for valid weight should be created successfully",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12624
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "creating-valid-package-weights;create-a-valid-package-label-with-varying-weights",
+        "keyword": "Scenario Outline",
+        "line": 11,
+        "name": "Create a valid package label with varying weights",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "a package with valid weight 30 height, 30 width, 30 length, and weight 2.5 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14874
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the label is created for the valid weight package",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 127082
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the label for valid weight should be created successfully",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12042
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "creating-valid-package-weights;create-a-valid-package-label-with-varying-weights",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Create a valid package label with varying weights",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "a package with valid weight 30 height, 30 width, 30 length, and weight 10.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15874
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the label is created for the valid weight package",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14042
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the label for valid weight should be created successfully",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6250
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "creating-valid-package-weights;create-a-valid-package-label-with-varying-weights",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "name": "Create a valid package label with varying weights",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "a package with valid weight 30 height, 30 width, 30 length, and weight 22.5 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15209
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the label is created for the valid weight package",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22082
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the label for valid weight should be created successfully",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6292
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "creating-valid-package-weights;create-a-valid-package-label-with-varying-weights",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "name": "Create a valid package label with varying weights",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "a package with valid weight 40 height, 40 width, 40 length, and weight 30.0 kg, and delivery type \"STANDARD\"",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17291
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the label is created for the valid weight package",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the label for valid weight should be created successfully",
+            "match": {
+              "location": "src/features/support/CalculateLabelValidWeight.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9458
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "creating-valid-package-weights",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Creating valid package weights",
+    "tags": [],
+    "uri": "src/features/CreateLabelValidWeight.feature"
   }
 ]

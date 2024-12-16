@@ -7,23 +7,23 @@ import { v4 as uuid4 } from 'uuid';
 class LabelService {
   private static maxDimensions = { height: 50, width: 50, length: 50 };
   private static minDimensions = { height: 10, width: 10, length: 5 };
-  private static minWeight = 0.1;
+  private static minWeight = 0.01;
   private static maxWeight = 30;
 
   public static validatePackage(pkg: Package): boolean {
     if (pkg.getHeight() > this.maxDimensions.height ||
         pkg.getWidth() > this.maxDimensions.width ||
         pkg.getLength() > this.maxDimensions.length) {
-          throw new Error('Package exceeds maximum allowable size.');
+          throw new Error('Package is above maximum allowable size');
     }
 
     if (pkg.getHeight() < this.minDimensions.height ||
         pkg.getWidth() < this.minDimensions.width ||
         pkg.getLength() < this.minDimensions.length) {
-          throw new Error('Package is below minimum allowable size.');
+          throw new Error('Package is below minimum allowable size');
     }
     if (pkg.getWeight() < this.minWeight || pkg.getWeight() > this.maxWeight) {
-      throw new Error('Package weight is out of allowable range.');
+      throw new Error('Package is out of allowable weight range');
     }
     return true;
   }
