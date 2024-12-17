@@ -42,9 +42,9 @@ class LabelService {
         break;
     }
 
-    if (pkg.getWeight() > 15) {
+    if (pkg.getWeight() > 15 && pkg.getWeight() <= 30) {
       baseCost += 30;
-    } else if (pkg.getWeight() > 5) {
+    } else if (pkg.getWeight() > 5 && pkg.getWeight() <= 15) {
       baseCost += 15;
     }
 
@@ -61,9 +61,7 @@ class LabelService {
 
     const label = new Label(uuid4(), pkg, shippingCost)
 
-    console.log(`Label created successfully!`);
-    console.log(`Cost: ${shippingCost}`);
-
+    console.log(`Label ${label.getId()} created successfully! - Cost: ${shippingCost}`);
     return label;
   }
 }

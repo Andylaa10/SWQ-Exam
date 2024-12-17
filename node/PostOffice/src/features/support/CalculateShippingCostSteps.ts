@@ -20,7 +20,6 @@ When('the shipping cost is calculated for the package', function () {
 });
 
 Then('the shipping cost should be {float}', function (expectedCost) {
-  console.log(`Expected cost: ${expectedCost}, Actual cost: ${actualCost}`);
   assert.equal(expectedCost, actualCost, `Expected cost: ${expectedCost}, Actual cost: ${actualCost}`);
 });
 

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "v": "node -v",
-    "test": "cucumber-js src/features/package_label.feature --require src/features"
+    "test": "cucumber-js src/features --require src/features"
   },
   "keywords": [],
   "author": "",
