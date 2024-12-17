@@ -23,7 +23,7 @@ func (p *PostOfficeTestState) reset() {
 }
 
 // Arrange
-func (p *PostOfficeTestState) GivenAPackageWithDimensionsForShipping(height int32, width, length int32, weight float32, deliveryType string) {
+func (p *PostOfficeTestState) GivenAPackageWithDimensionsForShipping(height int32, width int32, length int32, weight float32, deliveryType string) {
 	p.pkg = models.Package{
 		ID:           uuid.NewString(),
 		Height:       height,
@@ -41,8 +41,8 @@ func (p *PostOfficeTestState) WhenTheShippingCostIsCalculated() {
 
 // Assert
 func (p *PostOfficeTestState) ThenTheShippingCostShouldBe(ctx context.Context, expectedTotalCost float32) {
-	assert.Equal(godog.T(ctx), expectedTotalCost, p.totalCost)
-	assert.Greater(godog.T(ctx), expectedTotalCost, 0)
+	assert.Equal(godog.T(ctx), expectedTotalCost, float32(p.totalCost))
+	assert.Greater(godog.T(ctx), expectedTotalCost, float32(0))
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

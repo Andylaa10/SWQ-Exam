@@ -58,7 +58,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 		return ctx, nil
 	})
 
-	ctx.Given(`a package with invalid dimensions (\d+) height, (\d+) width, (\d+) length, and weight (\d+\.\d+) kg, and delivery type "([^"]*)"$`, ts.GivenAPackageWithDimensionsForShipping)
+	ctx.Given(`a package with invalid dimensions (\d+) height, (\d+) width, (\d+) length, and weight (\d+\.\d+) kg, and delivery type "([^"]*)"$`, ts.GivenAPackageWithInvalidDimensions)
 	ctx.When(`the label is created for the invalid dimensions package`, ts.InvalidDimensionsWhenTheLabelIsCreated)
 	ctx.Then(`an exception should be thrown with "([^"]*)"$`, ts.ThenAnExceptionShouldBeThrownDueToInvalidDimensions)
 }

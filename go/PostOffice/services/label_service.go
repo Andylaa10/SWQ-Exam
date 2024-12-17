@@ -38,11 +38,9 @@ func CalculateShippingCost(pkg models.Package) float32 {
 		baseCost = 120
 	case "ECONOMY":
 		baseCost = 30
-	default:
-		return 0
 	}
 
-	if pkg.Weight > 0 && pkg.Weight <= 15 {
+	if pkg.Weight > 5 && pkg.Weight <= 15 {
 		baseCost += 15
 	} else if pkg.Weight > 15 && pkg.Weight <= 30 {
 		baseCost += 30
